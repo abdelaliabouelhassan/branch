@@ -9,9 +9,9 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <title>Document</title>
 </head>
-<body class=" w-full dark" :class="{ 'dark': darkmode }" x-data="{ darkmode: localStorage.getItem('darkmode') === 'true' || false }">
+<body class=" w-full dark" :class="{ 'dark': darkmode,'overflow-hidden':isOpen }" x-data="{ isOpen:false,darkmode: localStorage.getItem('darkmode') === 'true' || false }">
      
-       <header class=" w-full bg-white  dark:bg-[#082031]">
+       <header class=" w-full bg-white  dark:bg-[#082031] fixed top-0 left-0">
           <!-- top header -->
          <div class=" w-full max-w-[80rem] mx-auto py-5 px-4 flex items-center justify-between">
             <a href="#">
@@ -54,7 +54,7 @@
             </div>
         </div>
           <!-- bottom header -->
-          <div class=" w-full bg-[#1a1a1a] dark:bg-[#00000066] " x-data="{isOpen: false}" >
+          <div class=" w-full bg-[#1a1a1a] dark:bg-[#00000066] " >
             <div class=" w-full max-w-[80rem] mx-auto py-5 px-4 flex items-center justify-between" id="menu">
                 <div class=" w-full max-w-[459.67px] mdd:block hidden ">
                     <nav class=" w-full flex items-center justify-between">
@@ -99,8 +99,44 @@
 
             </div>
           </div>
+          <!-- mobile Menu -->
+         <div class=" w-full h-screen absolute opacity-0 scale-y-0 origin-top duration-500 transform overflow-hidden" :class="{'opacity-100  delay-[0.15s] scale-y-100':isOpen}">
+            <div class=" relative w-full h-full">
+                <div class=" absolute py-12 w-full z-50 bg-white  dark:bg-[#082031] " >
+                    <div class=" w-full flex flex-col items-center justify-center space-y-5 ">
+                        <a href="#" :class="{'opacity-100 translate-y-0 delay-300 ':isOpen,' opacity-0 translate-y-[-0.925rem]' :!isOpen}" class="duration-[0.6s] transform text-primary  font-normal leading-6 text-xl hover:text-primary capitalize ">Main</a>
+                        <a href="#" :class="{'opacity-100 translate-y-0 delay-300 ':isOpen,' opacity-0 translate-y-[-0.925rem]' :!isOpen}" class=" duration-[0.6s] transform text-headerColor dark:text-bodyTextColorWhite font-normal leading-6 text-xl hover:text-primary  capitalize ">SASS</a>
+                        <a href="#" :class="{'opacity-100 translate-y-0 delay-300 ':isOpen,' opacity-0 translate-y-[-0.925rem]' :!isOpen}" class=" duration-[0.6s] transform text-headerColor dark:text-bodyTextColorWhite font-normal leading-6 text-xl hover:text-primary  capitalize ">Optimization</a>
+                        <div class=" flex flex-col items-center space-y-5">
+                            <div :class="{'opacity-100 translate-y-0 delay-300 ':isOpen,' opacity-0 translate-y-[-0.925rem]' :!isOpen}"  class=" pl-4 duration-[0.6s] transform flex items-start space-x-1 space-y-1">
+                                <a href="#" class="  text-headerColor dark:text-bodyTextColorWhite font-normal leading-6 text-xl hover:text-primary duration-300 capitalize ">CMS</a>
+                                <img src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" class=" w-[15px] h-[15px]" alt="">
+                            </div>
+                            <a href="#" :class="{'opacity-100 translate-y-0 delay-300 ':isOpen,' opacity-0 translate-y-[-0.925rem]' :!isOpen}"  class="duration-[0.6s] transform text-headerColor dark:text-bodyTextColorWhite  font-normal leading-6 text-xl hover:text-primary  capitalize ">Blog</a>
+                            <a href="#" :class="{'opacity-100 translate-y-0 delay-300 ':isOpen,' opacity-0 translate-y-[-0.925rem]' :!isOpen}"  class="duration-[0.6s] transform  text-headerColor dark:text-bodyTextColorWhite font-normal leading-6 text-xl hover:text-primary   capitalize ">Menu</a>
+                        </div>
+                        <div class=" flex flex-col items-center space-y-5 ">
+                            <div :class="{'opacity-100 translate-y-0 delay-300 ':isOpen,' opacity-0 translate-y-[-0.925rem]' :!isOpen}"  class="duration-[0.6s] transform flex items-start space-x-1 space-y-1">
+                                <a href="#" class="  text-headerColor dark:text-bodyTextColorWhite font-normal leading-6 text-xl hover:text-primary duration-300 capitalize ">Shop</a>
+                                <img src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" class=" w-[15px] h-[15px]" alt="">
+                            </div>
+                            <a href="#" :class="{'opacity-100 translate-y-0 delay-300 ':isOpen,' opacity-0 translate-y-[-0.925rem]' :!isOpen}"  class="duration-[0.6s] transform text-headerColor dark:text-bodyTextColorWhite  font-normal leading-6 text-xl hover:text-primary  capitalize ">Automated Collection</a>
+                            <a href="#" :class="{'opacity-100 translate-y-0 delay-300 ':isOpen,' opacity-0 translate-y-[-0.925rem]' :!isOpen}"  class="duration-[0.6s] transform  text-headerColor dark:text-bodyTextColorWhite font-normal leading-6 text-xl hover:text-primary  capitalize ">Hydrogen</a>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class=" w-full bg-[#00000099] h-full top-0 left-0 " style=" -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);"></div>
+              </div>
+         </div>
        </header>
 
+
+
+       <main class=" w-full h-screen bg-black flex flex-col justify-between">
+        <div class=" w-full h-40 bg-red-400"></div>
+        <div class=" w-full h-40 bg-blue-400"></div>
+       </main>
 
 </body>
 </html>
