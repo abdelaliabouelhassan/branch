@@ -130,3 +130,11 @@ body.dark #dark-mode-toggle .cs-moon {
     opacity: 0;
     bottom: 100%;
 }
+
+.cardShadow {
+    box-shadow: 0px 12px 80px 0px rgba(26, 26, 26, 0.08);
+}
+
+.logoBrightness {
+    filter: brightness(0) invert(1);
+}
