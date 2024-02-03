@@ -67,3 +67,66 @@ body.dark #dark-mode-toggle .cs-moon {
     transform: translate(-50%, 100%);
     transition: transform 0.3s, opacity 0.3s;
 }
+
+
+
+#menu .box {
+    width: clamp(1.5rem, 2vw, 1.75rem);
+    height: 1rem;
+    position: relative;
+}
+
+#menu .line {
+    width: 100%;
+    height: 2px;
+    background-color: #fafbfc;
+    border-radius: 2px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#menu .line1 {
+    top: 0;
+    transition: transform 0.5s, top 0.3s, left 0.3s;
+    animation-duration: 0.7s;
+    animation-timing-function: ease;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    transform-origin: center;
+}
+
+#menu .line2 {
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    transition: top 0.3s, left 0.3s, transform 0.5s;
+    animation-duration: 0.7s;
+    animation-timing-function: ease;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+#menu .line3 {
+    bottom: 0;
+    transition: bottom 0.3s, opacity 0.3s;
+}
+
+#menu .toggle.manu-active {
+    transform: rotate(180deg);
+}
+
+#menu .manu-active .line1 {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(225deg);
+}
+
+#menu .manu-active .line2 {
+    top: 50%;
+    transform: translate(-50%, -50%) translateY(0) rotate(-225deg);
+    transform-origin: center;
+}
+
+#menu .manu-active .line3 {
+    opacity: 0;
+    bottom: 100%;
+}
