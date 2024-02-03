@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- tailwindcss build output -->
+    <link href="../build/output.css" rel="stylesheet">
+    <!-- alpinejs cdn -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <title>Document</title>
+</head>
+<body class=" w-full dark" :class="{ 'dark': darkmode }" x-data="{ darkmode: localStorage.getItem('darkmode') === 'true' || false }">
+    
+       <header class=" w-full bg-white  dark:bg-[#082031]">
+         <div class=" w-full max-w-[80rem] mx-auto py-5 px-4 flex items-center justify-between">
+            <a href="#">
+                <img class=" w-44  sm:w-full sm:h-full object-cover dark:brightness-[1000%]" src="./assets/img/logo.svg"  alt="">
+            </a>
+
+            <div class=" flex  items-center space-x-10 xl:w-full max-w-[777px]">
+               <div class=" w-full flex items-center space-x-16">
+                <a href="mailto:example@mail.com" class="flip hidden items-center space-x-4 lg:flex ">
+                    <div  class="flop w-[3.5rem] h-[3.5rem] bg-[#FEF8EA] dark:bg-[#233545] flex  duration-[0.6s]">
+                         <img class=" m-auto" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/yellow-mail.svg" alt="">
+                    </div>
+                    <div class=" flex flex-col items-start space-y-1">
+                        <span class="text-headerColor dark:text-bodyTextColorWhite text-base leading-[1.2rem] font-bold whitespace-nowrap">Found a bug?</span>
+                        <span class="text-headerColor dark:text-bodyTextColorWhite text-sm font-normal leading-[1.2rem] text-opacity-90 whitespace-nowrap">Email us!</span>
+                    </div>
+                </a>
+                <a href="#" class="flip  items-center space-x-4 mdd:flex hidden">
+                    <div  class="flop w-[3.5rem] h-[3.5rem] bg-[#FEF8EA] dark:bg-[#233545] flex  duration-[0.6s]">
+                         <img class=" m-auto" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/yellow-pin.svg" alt="">
+                    </div>
+                    <div class=" flex flex-col items-start space-y-1">
+                        <span class=" text-headerColor dark:text-bodyTextColorWhite text-base leading-[1.2rem] font-bold whitespace-nowrap">Want more sections?</span>
+                        <span class="text-headerColor dark:text-bodyTextColorWhite text-sm font-normal leading-[1.2rem] text-opacity-90 whitespace-nowrap">Visit CodeStitch!</span>
+                    </div>
+                </a>
+               </div>
+                <div class=" w-full flex items-center space-x-5">
+                    <a href="#" class=" btn  text-base font-bold text-center no-underline sm:block hidden w-[188.16px]  py-4 text-headerColor bg-primary hover:text-white">
+                        Priority CTA
+                    </a>
+                    <button @click="darkmode = !darkmode; localStorage.setItem('darkmode', darkmode.toString())" class=" w-12 h-12   bg-transparent relative z-40 overflow-hidden" id="dark-mode-toggle">
+                        <svg  class="cs-moon w-5 absolute top-[50%] left-[50%] h-5" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" style="enable-background:new 0 0 480 480" xml:space="preserve">
+                            <path d="M459.782 347.328c-4.288-5.28-11.488-7.232-17.824-4.96-17.76 6.368-37.024 9.632-57.312 9.632-97.056 0-176-78.976-176-176 0-58.4 28.832-112.768 77.12-145.472 5.472-3.712 8.096-10.4 6.624-16.832S285.638 2.4 279.078 1.44C271.59.352 264.134 0 256.646 0c-132.352 0-240 107.648-240 240s107.648 240 240 240c84 0 160.416-42.688 204.352-114.176 3.552-5.792 3.04-13.184-1.216-18.496z"></path>
+                        </svg>
+                        <img alt="moon" decoding="async" height="15" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsun.svg" width="15" class="cs-sun w-5 absolute top-[50%] left-[50%] h-5" aria-hidden="true">
+                    </button>
+                </div>
+
+            </div>
+        </div>
+       </header>
+</body>
+</html>
