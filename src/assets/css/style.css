@@ -11,6 +11,9 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.headerbox {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
 
 .btn {
     position: relative;
@@ -137,4 +140,49 @@ body.dark #dark-mode-toggle .cs-moon {
 
 .logoBrightness {
     filter: brightness(0) invert(1);
+}
+
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-0.6em);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatAnimation2 {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-1em);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.float {
+    animation-name: floatAnimation;
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+}
+
+
+.float2{
+    animation-name: floatAnimation2;
+    animation-duration: 20s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
 }

@@ -11,7 +11,7 @@
 </head>
 <body class=" w-full h-full dark" :class="{ 'dark': darkmode,'overflow-hidden':isOpen }" x-data="{ isOpen:false,darkmode: localStorage.getItem('darkmode') === 'true' || false }">
         <!-- Header -->
-       <header class=" w-full z-50 bg-white  dark:bg-[#082031] fixed top-0 left-0">
+       <header class="headerbox w-full z-50 bg-white  dark:bg-[#082031] fixed top-0 left-0">
           <!-- top header -->
          <div class=" w-full max-w-[80rem] mx-auto py-5 px-4 flex items-center justify-between">
             <a href="#">
@@ -100,7 +100,7 @@
             </div>
           </div>
           <!-- mobile Menu -->
-         <div class=" w-full h-screen absolute opacity-0 scale-y-0 origin-top duration-500 transform overflow-hidden" :class="{'opacity-100  delay-[0.15s] scale-y-100':isOpen}">
+         <div class=" mdd:hidden w-full h-screen absolute opacity-0 scale-y-0 origin-top duration-500 transform overflow-hidden" :class="{'opacity-100  delay-[0.15s] scale-y-100':isOpen}">
             <div class=" relative w-full h-full">
                 <div class=" absolute py-12 w-full z-50 bg-white  dark:bg-[#082031] " >
                     <div class=" w-full flex flex-col items-center justify-center space-y-5 ">
@@ -132,16 +132,15 @@
        </header>
        <!-- End Header -->
 
-       <!-- Main -->
-    
-       <main class=" w-full h-full  relative mt-[11.5rem] sm:mt-[12rem] ">   
+       <div class=" w-full h-full  relative mt-[11.5rem] sm:mt-[12rem] ">   
           <div class=" w-full h-full overflow-hidden hidden sm:block">
             <div class=" w-full h-full fixed bg-[#111926] dark:bg-[#0b111b] dark:bg-opacity-80  top-0 left-0 z-30 bg-opacity-80"></div>
             <img src="	https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/meeting-2.jpeg" class=" hidden sm:block fixed top-0 left-0 w-full h-full object-cover" alt="">
           </div>
-        <div class=" w-full absolute top-0 left-0 z-40 ">
+         <!-- Main -->
+        <main class=" w-full absolute top-0 left-0 z-40 ">
               <!-- First Section -->
-              <section class=" w-full sm:h-full h-[120vh]  sm:py-64  relative" >
+              <section class=" w-full sm:h-full h-[120vh]  sm:py-[13rem]  relative" >
                   <div class=" w-full  h-full px-4 lg:px-0 absolute sm:relative -top-20 sm:top-auto  left-0   flex z-40  ">
                     <div class=" w-full max-w-[53.125rem]  m-auto relative py-32 sm:py-40  ">
                             <div class=" w-[8.75rem] h-[8.75rem] border-l-2 border-t-2 border-white absolute left-0 top-0"></div>
@@ -169,60 +168,89 @@
             <!-- End First Section -->
 
             <!-- Second Section -->
-            <section class=" w-full relative z-40 space-y-10 pt-40 bg-white dark:bg-[#082031]">
+            <section class=" w-full relative z-40 space-y-28 sm:space-y-44 pt-40 pb-40 bg-white dark:bg-[#082031]">
               <div class=" relative -mt-40 -top-20   left-0 w-full px-4">
                 <div class=" w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 sm:gap-5 mx-auto max-w-[80rem] ">
                     <div class=" w-full bg-white dark:bg-[#2c394b] cardShadow p-8  flex flex-col items-start space-y-2">
-                        <div class=" pb-8">
+                        <div class="pb-4 sm:pb-8">
                             <img :class="{'logoBrightness':darkmode}" class=" w-[48px] h-[48px] object-cover" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/adv-kit-styles.svg" alt="">
                         </div>
-                        <h1 class=" text-2xl leading-[1.2em] text-headerColor dark:text-bodyTextColorWhite font-bold">LESS/SASS</h1>
-                        <p class=" text-base max-w-[28.125rem] text-bodyTextColor dark:text-bodyTextColorWhite  leading-[1.5em]">
+                        <h1 class=" text-xl sm:text-2xl leading-[1.2em] text-headerColor dark:text-bodyTextColorWhite font-bold">LESS/SASS</h1>
+                        <p class=" text-sm sm:text-base max-w-[28.125rem] text-bodyTextColor dark:text-bodyTextColorWhite  leading-[1.5em]">
                             Both preprocessors, alongside vanilla CSS, all available under one kit
                         </p>
                     </div>
                     <div class=" w-full bg-white dark:bg-[#2c394b] cardShadow p-8  flex flex-col items-start space-y-2">
-                        <div class=" pb-8">
+                        <div class=" pb-4 sm:pb-8">
                             <img :class="{'logoBrightness':darkmode}" class=" w-[48px] h-[48px] object-cover" src="	https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/adv-kit-optimize.svg" alt="">
                         </div>
-                        <h1 class=" text-2xl leading-[1.2em] text-headerColor dark:text-bodyTextColorWhite font-bold">Optimization</h1>
-                        <p class=" text-base max-w-[28.125rem] text-bodyTextColor dark:text-bodyTextColorWhite  leading-[1.5em]">
+                        <h1 class=" text-xl sm:text-2xl leading-[1.2em] text-headerColor dark:text-bodyTextColorWhite font-bold">Optimization</h1>
+                        <p class=" text-sm sm:text-base max-w-[28.125rem] text-bodyTextColor dark:text-bodyTextColorWhite  leading-[1.5em]">
                             Get better Pagespeed scores, quicker, with automatic critical CSS inlining, minifiction and asset optimization
                         </p>
                     </div>
                     <div class=" w-full bg-white dark:bg-[#2c394b] cardShadow p-8  flex flex-col items-start space-y-2">
-                        <div class=" pb-8">
+                        <div class=" pb-4 sm:pb-8">
                             <img :class="{'logoBrightness':darkmode}" class=" w-[48px] h-[48px] object-cover" src="	https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/adv-kit-cart.svg" alt="">
                         </div>
-                        <h1 class=" text-2xl leading-[1.2em] text-headerColor dark:text-bodyTextColorWhite font-bold">eCommerce</h1>
-                        <p class=" text-base max-w-[28.125rem] text-bodyTextColor dark:text-bodyTextColorWhite  leading-[1.5em]">
+                        <h1 class=" text-xl sm:text-2xl leading-[1.2em] text-headerColor dark:text-bodyTextColorWhite font-bold">eCommerce</h1>
+                        <p class=" text-sm sm:text-base max-w-[28.125rem] text-bodyTextColor dark:text-bodyTextColorWhite  leading-[1.5em]">
                             Create the fastest of eCommerce stores with a seamless Shopify integration
                         </p>
                     </div>
                     <div class=" w-full bg-white dark:bg-[#2c394b] cardShadow p-8  flex flex-col items-start space-y-2">
-                        <div class=" pb-8">
+                        <div class=" pb-4 sm:pb-8">
                             <img :class="{'logoBrightness':darkmode}" class=" w-[48px] h-[48px] object-cover" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/adv-kit-cms.svg" alt="">
                         </div>
-                        <h1 class=" text-2xl leading-[1.2em] text-headerColor dark:text-bodyTextColorWhite font-bold">CMS</h1>
-                        <p class=" text-base max-w-[28.125rem] text-bodyTextColor dark:text-bodyTextColorWhite  leading-[1.5em]">
+                        <h1 class=" text-xl sm:text-2xl leading-[1.2em] text-headerColor dark:text-bodyTextColorWhite font-bold">CMS</h1>
+                        <p class=" text-sm sm:text-base max-w-[28.125rem] text-bodyTextColor dark:text-bodyTextColorWhite  leading-[1.5em]">
                             Free time and empower your clients with a Decap content management system
                         </p>
                     </div>
                 </div>
               </div>
 
-              <div  class=" w-full h-40 bg-red-400">
+              <div  class=" w-full flex items-center px-4 space-y-28 lg:space-y-0 lg:space-x-4 xl:space-x-0 xl:px-0 lg:flex-row flex-col  lg:justify-between max-w-[80rem] mx-auto ">
+                <div class=" w-full max-w-[500px] lg:max-w-[630px] relative flex justify-center ">
+                   
+                    <div class=" w-full max-w-[20em] sm:max-w-[28em] md:max-w-[29.75em] relative z-10">
+                        <div class=" w-[8em] h-[7em] sm:w-[11.625em] sm:h-[10.0625em] float bg-primary absolute -top-10 sm:-top-20 -left-4 sm:-left-14"></div>
+                        <img src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpeg" class=" z-10 relative w-full h-full object-cover" alt="">
+                        
+                    </div> 
+                    <div class=" w-[10em] h-[9em] sm:w-[16.25em] sm:h-[14.0625em] float2 border-[0.625em] border-white absolute -bottom-20  z-10 -right-3 sm:-right-14 lg:-right-4">
+                        <img class=" w-full h-full object-cover" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting-women.jpeg" alt="">
+                    </div>
+                    
+                   
+                </div>
 
+                <div class=" w-full max-w-[550px] flex flex-col items-start space-y-8">
+                    <div class=" w-full">
+                        <span class=" text-sm sm:text-base font-bold leading-[1.2em] text-primary">HOW IT WORKS</span>
+                        <h1 class=" text-[1.9375rem] sm:text-[3.0625rem] dark:text-bodyTextColorWhite text-headerColor font-black leading-[1.2em]">What makes this kit special</h1>
+                      
+                    </div>
+                    <p class=" text-base leading-[1.5em] dark:text-bodyTextColorWhite dark:text-opacity-80 text-bodyTextColor font-normal ">
+                        Behind the kit is careful management of the file structure, such that all shared code lives in the "main" branch. Each feature then lives on a separate branch, allowing you to choose what capabilities the project requires.
+                        <br> <br>
+                        Some files, namely "package.json", "package-lock.json", ".eleventy.js", and "_includes/base.html", require additions to them when merging new branches. Cloning the repo from a template loses all commit history, so conflicts will arise in these files. These can be resolved by ensuring all unique code is merged into the project.
+                        <br> <br>
+                        As such, a basic knowledge of Git is required before using this kit, with a solid grasp of how to resolve merge conflicts strongly advisable. You are welcome to merge in feature branches at a later date, after building the project up, but this may result in more complicated merges.
+                    </p>
+                    <a href="#" class=" btn  text-base font-bold text-center no-underline  w-[150px]  py-4 text-headerColor bg-primary hover:text-white">
+                        Read More
+                    </a>
+                </div>
               </div>
 
                 
             </section>
             <!-- End Second Section -->
-        </div>
-         
-         
-       </main>
-       <!-- End Main -->
+        </main>  
+         <!-- End Main -->
+    </div>
+      
 
        <!-- Footer -->
        <footer></footer>
